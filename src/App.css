@@ -47,6 +47,7 @@ html, body {
 
 .box {
   display: flex;
+  color: white;
   flex-direction: column;
   align-items: center;
   padding-right: 10%;
@@ -54,14 +55,17 @@ html, body {
 }
 
 input {
-  background-color: rgba(4, 142, 222, 0.6);
+  background-color: rgba(225, 235, 241, 0.6);
   padding: 5px;
   margin: 5px;
   color: black;
 }
 
 button {
-  background-color: rgb(148, 4, 21, 0.7);
+  background-color: rgba(187, 131, 138, 0.7);
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
 }
 
 button:hover {
