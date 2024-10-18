@@ -15,7 +15,7 @@ root.render(
 const titleRoot = ReactDOM.createRoot(document.getElementById('title'));
 titleRoot.render(
   <React.StrictMode>
-    <Title className="title" text="Gestión de Viajes" />
+    <Title className="title" text="Trip Planner" />
   </React.StrictMode>
 );
 

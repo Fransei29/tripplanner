@@ -34,10 +34,10 @@ const Trip = () => {
 
   return (
     <div className="box">
-      <h2>Viajes</h2>
+      <h2>Trip</h2>
       {/* Formulario para crear un nuevo viaje */}
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      <button onClick={createTrip}>Crear Viaje</button>
+      <button onClick={createTrip}>Create Trip</button>
       {/* Lista de viajes */}
       <ul>
         {trips.map((trip) => (

@@ -43,7 +43,7 @@ const Expense = () => {
 
   return (
     <div className="box"> 
-      <h2>Gastos</h2>
+      <h2>Expenses</h2>
       {/* Formulario para especificar el viaje y crear un nuevo gasto */}
       <input
         type="text"
@@ -56,7 +56,7 @@ const Expense = () => {
         onChange={(e) => setAmount(e.target.value)}
         placeholder="Monto"
       />
-      <button onClick={createExpense}>Crear Gasto</button>
+      <button onClick={createExpense}>Create Expense</button>
       {/* Lista de gastos */}
       <ul>
         {expenses.map((expense) => (
