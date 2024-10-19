@@ -37,7 +37,7 @@ const Trip = () => {
       <h2>Trip</h2>
       {/* Formulario para crear un nuevo viaje */}
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      <button onClick={createTrip}>Create Trip</button>
+      <button onClick={createTrip}>Create New Trip</button>
       {/* Lista de viajes */}
       <ul>
         {trips.map((trip) => (

@@ -1,10 +1,12 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   height: 100%;
 }
 
-.container {  display: grid;
+.container {  
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0px 0px;
@@ -18,12 +20,12 @@ html, body {
 
 .title { 
   grid-area: title;
-  background-color: rgb(78, 7, 101);
+  padding-right: 24%;
+  background-color: rgb(72, 4, 95);
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center; 
   text-align: center;
-  padding-left: 20%;
   color: white; 
   font-size: 19px;
 }
@@ -36,7 +38,7 @@ html, body {
   flex-wrap: wrap;
   align-content: flex-end;
   justify-content: flex-end;
-  background-color: rgba(194, 33, 248, 0.7);
+  background-color: rgba(201, 57, 249, 0.838);
 }
 
 .box {
@@ -45,14 +47,19 @@ html, body {
   font-size: 18px;
   flex-direction: column;
   align-items: center;
-  padding-right: 30%;
+  padding-right: 33%;
   justify-content: space-around;
 }
 
+h2{
+  margin-bottom: -0.1px;
+}
+
 input {
-  background-color: rgba(225, 235, 241, 0.956);
-  padding: 10px;
+  background-color: rgb(226, 222, 222);
+  padding: 12px;
   margin: 5px;
+  margin-top: 7px;
   color: black;
   border-style: none;
   border-radius: 4px;

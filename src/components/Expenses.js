@@ -56,7 +56,7 @@ const Expense = () => {
         onChange={(e) => setAmount(e.target.value)}
         placeholder="Monto"
       />
-      <button onClick={createExpense}>Create Expense</button>
+      <button onClick={createExpense}>Create New Expense</button>
       {/* Lista de gastos */}
       <ul>
         {expenses.map((expense) => (
