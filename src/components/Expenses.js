@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -10,7 +12,7 @@ const Expense = () => {
   // Función para crear un nuevo gasto
   const createExpense = async () => {
     try {
-      await axios.post('http://localhost:3000/expense', {       // Enviar una solicitud POST al servidor para crear un nuevo gasto
+      await axios.post('/api/expenses', {       // Enviar una solicitud POST al servidor para crear un nuevo gasto
         trip,
         amount: parseFloat(amount),
       });
@@ -25,7 +27,7 @@ const Expense = () => {
   // Función para obtener la lista de gastos para un viaje específico
   const fetchExpenses = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/expenses', {       // Enviar una solicitud GET al servidor para obtener todos los gastos del viaje especificado
+      const response = await axios.get('/api/expenses', {       // Enviar una solicitud GET al servidor para obtener todos los gastos del viaje especificado
         params: { trip },
       });
       setExpenses(response.data.expenses);   // Actualizar el estado con la lista de gastos obtenida
@@ -42,31 +44,37 @@ const Expense = () => {
   }, );
 
   return (
-    <div className="box"> 
-      <h2>Expenses</h2>
-      {/* Formulario para especificar el viaje y crear un nuevo gasto */}
-      <input
-        type="text"
-        value={trip}
-        onChange={(e) => setTrip(e.target.value)}
-      />
-      <input
-        type="number"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-        placeholder="Monto"
-      />
-      <button onClick={createExpense}>Create New Expense</button>
-      {/* Lista de gastos */}
-      <ul>
-        {expenses.map((expense) => (
-          <li key={expense._id}>
-            {expense.amount} - {expense.trip}
-          </li>
-        ))}
-      </ul>
+    <div className="expenses-container"> 
+     <div className="expenses-container-input">
+        <h2>Expenses</h2>
+        {/* Formulario para especificar el viaje y crear un nuevo gasto */}
+        <input
+          type="text"
+          value={trip}
+          onChange={(e) => setTrip(e.target.value)}
+        />
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Monto"
+        />
+        <button onClick={createExpense}>New Expense</button>
+     </div>
+     <div className="expenses-container-a">
+          {/* Lista de gastos */}
+          <ul>
+          <h2 className='title-expenses'>Your Expenses</h2>
+            {expenses.map((expense) => (
+              <li key={expense._id}>
+                {expense.trip} ${expense.amount}
+              </li>
+            ))}
+          </ul>
+      </div>
     </div>
   );
 };
 
 export default Expense;
+
